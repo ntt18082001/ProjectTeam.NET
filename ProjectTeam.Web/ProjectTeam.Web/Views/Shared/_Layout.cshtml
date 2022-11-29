@@ -1,49 +1,80 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+﻿<!doctype html>
+<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none" data-preloader="disable">
+
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - ProjectTeam.Web</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/ProjectTeam.Web.styles.css" asp-append-version="true" />
+
+	<meta charset="utf-8" />
+	<title>Dashboard | Velzon - Admin & Dashboard Template</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+	<meta content="Themesbrand" name="author" />
+	<!-- App favicon -->
+	<link rel="shortcut icon" href="~/AdminTemplate/assets/images/favicon.ico">
+
+	<!-- jsvectormap css -->
+	<link href="~/AdminTemplate/assets/libs/jsvectormap/css/jsvectormap.min.css" rel="stylesheet" type="text/css" />
+
+	<!--Swiper slider css-->
+	<link href="~/AdminTemplate/assets/libs/swiper/swiper-bundle.min.css" rel="stylesheet" type="text/css" />
+
+	<!-- Layout config Js -->
+	<script src="~/AdminTemplate/assets/js/layout.js"></script>
+	<!-- Bootstrap Css -->
+	<link href="~/AdminTemplate/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<!-- Icons Css -->
+	<link href="~/AdminTemplate/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+	<!-- App Css-->
+	<link href="~/AdminTemplate/assets/css/app.min.css" rel="stylesheet" type="text/css" />
+	<!-- custom Css-->
+	<link href="~/AdminTemplate/assets/css/custom.min.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">ProjectTeam.Web</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+	<!-- Begin page -->
+	<div id="layout-wrapper">
+		<partial name="_Header" />
+		@await Component.InvokeAsync("MainNavBar")
+		<div class="main-content">
+			<div class="page-content">
+				<div class="container-fluid">
+					@RenderBody()
+				</div>
+				<!-- container-fluid -->
+			</div>
+			<!-- End Page-content -->
+		</div>
+		<partial name="_Footer" />
+	</div>
+	<partial name="_BackToTop" />
+	<partial name="_Preloader" />
+	<partial name="_ThemeSettings" />
+	<!-- END layout-wrapper -->
+	<!-- JAVASCRIPT -->
+	<script src="~/AdminTemplate/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="~/AdminTemplate/assets/libs/simplebar/simplebar.min.js"></script>
+	<script src="~/AdminTemplate/assets/libs/node-waves/waves.min.js"></script>
+	<script src="~/AdminTemplate/assets/libs/feather-icons/feather.min.js"></script>
+	<script src="~/AdminTemplate/assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
+	<script src="~/AdminTemplate/assets/js/plugins.js"></script>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2022 - ProjectTeam.Web - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+	<!-- apexcharts -->
+	<script src="~/AdminTemplate/assets/libs/apexcharts/apexcharts.min.js"></script>
+
+	<!-- Vector map-->
+	<script src="~/AdminTemplate/assets/libs/jsvectormap/js/jsvectormap.min.js"></script>
+	<script src="~/AdminTemplate/assets/libs/jsvectormap/maps/world-merc.js"></script>
+
+	<!--Swiper slider js-->
+	<script src="~/AdminTemplate/assets/libs/swiper/swiper-bundle.min.js"></script>
+
+	<!-- Dashboard init -->
+	<script src="~/AdminTemplate/assets/js/pages/dashboard-ecommerce.init.js"></script>
+
+	<!-- App js -->
+	<script src="~/AdminTemplate/assets/js/app.js"></script>
+	<script src="~/js/site.js" asp-append-version="true"></script>
+
+	@await RenderSectionAsync("Scripts", required: false)
+
 </body>
+
 </html>
