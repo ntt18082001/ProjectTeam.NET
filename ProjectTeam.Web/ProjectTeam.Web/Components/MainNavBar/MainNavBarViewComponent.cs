@@ -22,7 +22,6 @@ namespace ProjectTeam.Web.Components.MainNavBar
 				{
 					DisplayText = "Test",
 					Icon = "mdi-hexagon-slice-5",
-					CollapseId = "TestController",
 					//Permission = AuthConst.AppOrder.VIEW_LIST
 					ChildrenItems = new MenuItem[]
 					{
@@ -32,6 +31,7 @@ namespace ProjectTeam.Web.Components.MainNavBar
 							Controller = "Test",
 							DisplayText = "Test",
 							Icon = "fa-box",
+							CodePage = "IndexTest"
 							//Permission = AuthConst.AppProducts.VIEW_LIST
 						},
 						new MenuItem
@@ -40,6 +40,7 @@ namespace ProjectTeam.Web.Components.MainNavBar
 							Controller = "Game",
 							DisplayText = "Game",
 							Icon = "fa-box",
+							CodePage = "IndexGame"
 							//Permission = AuthConst.AppProducts.VIEW_LIST
 						}
 					}

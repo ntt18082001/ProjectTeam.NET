@@ -15,6 +15,7 @@ namespace ProjectTeam.Web.Controllers
 
 		public IActionResult Index()
 		{
+			ViewBag.CodePage = "HomeIndex";
 			return View();
 		}
 

@@ -20,7 +20,7 @@
 		public string DisplayText { get; set; }
 		public string Icon { get; set; }
 		public int Permission { get; set; }
-		public string CollapseId { get; set; }
+		public string CodePage { get; set; }
 		public MenuItem[] ChildrenItems { get; set; }
 	}
 }

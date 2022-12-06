@@ -6,6 +6,7 @@ namespace ProjectTeam.Web.Controllers
 	{
 		public IActionResult Index()
 		{
+			ViewBag.CodePage = "IndexTest";
 			return View();
 		}
 	}

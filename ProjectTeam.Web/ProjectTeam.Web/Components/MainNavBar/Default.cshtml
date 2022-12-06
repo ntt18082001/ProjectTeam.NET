@@ -6,6 +6,8 @@
 	string menuOpenClass = "";
 	string activeClass = "";
 	bool itemIsOpened;
+	string codePage = "";
+	string codePageSub = "";
 }
 
 <!-- ========== App Menu ========== -->
@@ -57,7 +59,7 @@
 					menuOpenClass = "";
 					activeClass = "";
 
-					itemIsOpened = item.ChildrenItems != null && item.ChildrenItems.Any(i => i.Controller == currentControllerName);
+					itemIsOpened = item.ChildrenItems != null && item.ChildrenItems.Any(i => i.Controller == ViewBag.CodePage);
 					if (itemIsOpened)
 					{
 						menuOpenClass = " show";
@@ -68,17 +70,17 @@
 						activeClass = " active";
 					}
 					var collapse = "";
-					if (item.ChildrenItems != null && item.CollapseId != null)
+					if (item.ChildrenItems != null)
 					{
-						collapse = $"data-bs-toggle=collapse role=button aria-expanded=false aria-controls={item.CollapseId}";
+						collapse = $"data-bs-toggle=collapse role=button aria-expanded=false aria-controls={item.CodePage}";
 					}
 					<li class="nav-item">
-						<a class="nav-link menu-link@(activeClass)" href="@href@(item.CollapseId != null ? item.CollapseId : "")" @collapse>
+						<a class="nav-link menu-link@(activeClass)" href="@href@(ViewBag.CodePage != null ? ViewBag.CodePage : "")" @collapse>
 							<i class="mdi @item.Icon"></i> <span data-key="t-widgets">@item.DisplayText</span>
 						</a>
 						@if (href == "#" && item.ChildrenItems != null)
 						{
-							<div class="collapse menu-dropdown @menuOpenClass" id="@item.CollapseId">
+							<div class="collapse menu-dropdown @menuOpenClass" id="@ViewBag.CodePage">
 								<ul class="nav nav-sm flex-column">
 									@foreach (var sub in item.ChildrenItems)
 									{
@@ -86,9 +88,10 @@
 										//{
 										//	continue;
 										//}
-										activeClass = sub.Controller == currentControllerName ? " active" : "";
+										activeClass = item.CodePage == ViewBag.CodePage ? " active" : "";
 										<li class="nav-item">
-											<a asp-controller="@sub.Controller" asp-action="@sub.Action" class="nav-link@(activeClass)">
+											<a asp-controller="@sub.Controller" asp-action="@sub.Action" 
+											   class="nav-link@(activeClass)" data-key="@item.CodePage">
 												@sub.DisplayText
 											</a>
 										</li>
