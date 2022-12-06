@@ -20,11 +20,29 @@ namespace ProjectTeam.Web.Components.MainNavBar
 				},
 				new MenuItem
 				{
-					Action = "Index",
-					Controller = "Test",
-					DisplayText = "Test hihi",
+					DisplayText = "Test",
 					Icon = "mdi-hexagon-slice-5",
+					CollapseId = "TestController",
 					//Permission = AuthConst.AppOrder.VIEW_LIST
+					ChildrenItems = new MenuItem[]
+					{
+						new MenuItem
+						{
+							Action = "Index",
+							Controller = "Test",
+							DisplayText = "Test",
+							Icon = "fa-box",
+							//Permission = AuthConst.AppProducts.VIEW_LIST
+						},
+						new MenuItem
+						{
+							Action = "Index",
+							Controller = "Game",
+							DisplayText = "Game",
+							Icon = "fa-box",
+							//Permission = AuthConst.AppProducts.VIEW_LIST
+						}
+					}
 				},
 			});
 			return View(navBar);
