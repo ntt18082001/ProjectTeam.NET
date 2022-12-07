@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc.Razor;
+using ProjectTeam.Web.Components.MainNavBar;
 
 namespace ProjectTeam.Web.WebConfig
 {
@@ -14,6 +15,11 @@ namespace ProjectTeam.Web.WebConfig
 				config.ViewLocationFormats.Add("/{0}.cshtml");
 				config.AreaViewLocationFormats.Add("Areas/Admin/{0}.cshtml");
 			});
+			
+			// Khởi tạo dữ liệu thanh menu
+			NavBarViewModel navBar = new();
+			navBar.AddListNavBar();
+			services.AddSingleton(navBar);
 		}
 	}
 }

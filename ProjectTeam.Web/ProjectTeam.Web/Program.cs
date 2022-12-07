@@ -1,16 +1,19 @@
 using Microsoft.AspNetCore.Mvc.Razor;
+using ProjectTeam.Web.WebConfig;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-builder.Services.AddControllersWithViews();
+//// Add services to the container.
+//builder.Services.AddControllersWithViews();
 
-builder.Services.Configure<RazorViewEngineOptions>(config =>
-{
-	// path: /Components/{component-name}/Default.cshtml
-	config.ViewLocationFormats.Add("/{0}.cshtml");
-	config.AreaViewLocationFormats.Add("Areas/Admin/{0}.cshtml");
-});
+//builder.Services.Configure<RazorViewEngineOptions>(config =>
+//{
+//	// path: /Components/{component-name}/Default.cshtml
+//	config.ViewLocationFormats.Add("/{0}.cshtml");
+//	config.AreaViewLocationFormats.Add("Areas/Admin/{0}.cshtml");
+//});
+
+builder.Services.AddAppService(builder.Configuration);
 
 var app = builder.Build();
 
@@ -29,8 +32,13 @@ app.UseRouting();
 
 app.UseAuthorization();
 
-app.MapControllerRoute(
-	name: "default",
-	pattern: "{controller=Home}/{action=Index}/{id?}");
+//app.MapControllerRoute(
+//	name: "default",
+//	pattern: "{controller=Home}/{action=Index}/{id?}");
+
+app.UseEndpoints(endpoints =>
+{
+	endpoints.MapAppRoute();
+});
 
 app.Run();

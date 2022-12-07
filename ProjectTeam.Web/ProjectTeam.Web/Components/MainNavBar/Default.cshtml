@@ -6,8 +6,6 @@
 	string menuOpenClass = "";
 	string activeClass = "";
 	bool itemIsOpened;
-	string codePage = "";
-	string codePageSub = "";
 }
 
 <!-- ========== App Menu ========== -->
@@ -59,28 +57,35 @@
 					menuOpenClass = "";
 					activeClass = "";
 
-					itemIsOpened = item.ChildrenItems != null && item.ChildrenItems.Any(i => i.Controller == ViewBag.CodePage);
+					itemIsOpened = item.ChildrenItems != null && item.ChildrenItems.Any(i => i.CodePage == ViewBag.CodePage);
 					if (itemIsOpened)
 					{
 						menuOpenClass = " show";
 						activeClass = " active";
 					}
-					else if (item.Controller == currentControllerName)
+					else if (item.Controller == currentControllerName && item.CodePage == ViewBag.CodePage)
 					{
 						activeClass = " active";
 					}
 					var collapse = "";
+					var codePageSub = "";
 					if (item.ChildrenItems != null)
 					{
-						collapse = $"data-bs-toggle=collapse role=button aria-expanded=false aria-controls={item.CodePage}";
+						codePageSub = item.ChildrenItems[0].CodePage;
+						collapse = $"data-bs-toggle=collapse role=button aria-expanded=false aria-controls={codePageSub}";
+					}
+					if (!String.IsNullOrEmpty(codePageSub))
+					{
+						href += codePageSub;
 					}
 					<li class="nav-item">
-						<a class="nav-link menu-link@(activeClass)" href="@href@(ViewBag.CodePage != null ? ViewBag.CodePage : "")" @collapse>
+						<a class="nav-link menu-link@(activeClass)" 
+						   href="@href" @collapse>
 							<i class="mdi @item.Icon"></i> <span data-key="t-widgets">@item.DisplayText</span>
 						</a>
-						@if (href == "#" && item.ChildrenItems != null)
+						@if (item.ChildrenItems != null)
 						{
-							<div class="collapse menu-dropdown @menuOpenClass" id="@ViewBag.CodePage">
+							<div class="collapse menu-dropdown @menuOpenClass" id="@codePageSub">
 								<ul class="nav nav-sm flex-column">
 									@foreach (var sub in item.ChildrenItems)
 									{
@@ -88,10 +93,10 @@
 										//{
 										//	continue;
 										//}
-										activeClass = item.CodePage == ViewBag.CodePage ? " active" : "";
+										activeClass = sub.CodePage == ViewBag.CodePage ? " active" : "";
 										<li class="nav-item">
 											<a asp-controller="@sub.Controller" asp-action="@sub.Action" 
-											   class="nav-link@(activeClass)" data-key="@item.CodePage">
+											   class="nav-link@(activeClass)" data-key="@codePageSub">
 												@sub.DisplayText
 											</a>
 										</li>

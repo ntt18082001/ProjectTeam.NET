@@ -6,7 +6,6 @@ namespace ProjectTeam.Web.Controllers
 	{
 		public IActionResult Index()
 		{
-			ViewBag.CodePage = "IndexGame";
 			return View();
 		}
 	}
