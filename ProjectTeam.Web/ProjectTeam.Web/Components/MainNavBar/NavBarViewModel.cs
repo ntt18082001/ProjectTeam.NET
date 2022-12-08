@@ -1,4 +1,6 @@
-﻿namespace ProjectTeam.Web.Components.MainNavBar
+﻿using ProjectTeam.Share.Common;
+
+namespace ProjectTeam.Web.Components.MainNavBar
 {
 	public class NavBarViewModel
 	{
@@ -17,7 +19,7 @@
 					Controller = "Home",
 					DisplayText = "Dashboard",
 					Icon = "mdi-home",
-					CodePage = "HomeIndex",
+					CodePage = AppConst.Home.HOME_CODE_PAGE,
 					//Permission = AuthConst.NO_PERMISSION
 				},
 				new MenuItem
@@ -26,7 +28,7 @@
 					Controller = "Home",
 					DisplayText = "Privacy",
 					Icon = "mdi-home",
-					CodePage = "PrivacyIndex",
+					CodePage = AppConst.Home.PRIVACY_CODE_PAGE,
 					//Permission = AuthConst.NO_PERMISSION
 				},
 				new MenuItem
@@ -42,7 +44,7 @@
 							Controller = "Test",
 							DisplayText = "Test",
 							Icon = "fa-box",
-							CodePage = "IndexTest"
+							CodePage = AppConst.Test.TEST_CODE_PAGE
 							//Permission = AuthConst.AppProducts.VIEW_LIST
 						},
 						new MenuItem
@@ -51,7 +53,7 @@
 							Controller = "Test",
 							DisplayText = "Test view",
 							Icon = "fa-box",
-							CodePage = "TestView"
+							CodePage = AppConst.Test.TEST_VIEW_CODE_PAGE
 							//Permission = AuthConst.AppProducts.VIEW_LIST
 						}
 					}
@@ -69,7 +71,7 @@
 							Controller = "Game",
 							DisplayText = "Game",
 							Icon = "fa-box",
-							CodePage = "IndexGame"
+							CodePage = AppConst.Game.GAME_CODE_PAGE
 							//Permission = AuthConst.AppProducts.VIEW_LIST
 						}
 					}
