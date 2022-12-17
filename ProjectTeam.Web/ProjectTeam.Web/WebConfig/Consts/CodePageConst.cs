@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ProjectTeam.Share.Common
+﻿namespace ProjectTeam.Web.WebConfig.Consts
 {
-	public static class AppConst
+	public class CodePageConst
 	{
 		// Các code page cho các view của các controller
 		public static class Home

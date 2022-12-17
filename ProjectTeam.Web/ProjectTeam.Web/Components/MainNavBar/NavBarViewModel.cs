@@ -1,4 +1,4 @@
-﻿using ProjectTeam.Share.Common;
+﻿using ProjectTeam.Web.WebConfig.Consts;
 
 namespace ProjectTeam.Web.Components.MainNavBar
 {
@@ -19,7 +19,7 @@ namespace ProjectTeam.Web.Components.MainNavBar
 					Controller = "Home",
 					DisplayText = "Dashboard",
 					Icon = "mdi-home",
-					CodePage = AppConst.Home.HOME_CODE_PAGE,
+					CodePage = CodePageConst.Home.HOME_CODE_PAGE,
 					//Permission = AuthConst.NO_PERMISSION
 				},
 				new MenuItem
@@ -28,7 +28,7 @@ namespace ProjectTeam.Web.Components.MainNavBar
 					Controller = "Home",
 					DisplayText = "Privacy",
 					Icon = "mdi-home",
-					CodePage = AppConst.Home.PRIVACY_CODE_PAGE,
+					CodePage = CodePageConst.Home.PRIVACY_CODE_PAGE,
 					//Permission = AuthConst.NO_PERMISSION
 				},
 				new MenuItem
@@ -44,7 +44,7 @@ namespace ProjectTeam.Web.Components.MainNavBar
 							Controller = "Test",
 							DisplayText = "Test",
 							Icon = "fa-box",
-							CodePage = AppConst.Test.TEST_CODE_PAGE
+							CodePage = CodePageConst.Test.TEST_CODE_PAGE
 							//Permission = AuthConst.AppProducts.VIEW_LIST
 						},
 						new MenuItem
@@ -53,7 +53,7 @@ namespace ProjectTeam.Web.Components.MainNavBar
 							Controller = "Test",
 							DisplayText = "Test view",
 							Icon = "fa-box",
-							CodePage = AppConst.Test.TEST_VIEW_CODE_PAGE
+							CodePage = CodePageConst.Test.TEST_VIEW_CODE_PAGE
 							//Permission = AuthConst.AppProducts.VIEW_LIST
 						}
 					}
@@ -71,7 +71,7 @@ namespace ProjectTeam.Web.Components.MainNavBar
 							Controller = "Game",
 							DisplayText = "Game",
 							Icon = "fa-box",
-							CodePage = AppConst.Game.GAME_CODE_PAGE
+							CodePage = CodePageConst.Game.GAME_CODE_PAGE
 							//Permission = AuthConst.AppProducts.VIEW_LIST
 						}
 					}

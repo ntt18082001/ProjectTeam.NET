@@ -7,7 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Common\" />
+    <Compile Remove="Const\**" />
+    <Content Remove="Const\**" />
+    <EmbeddedResource Remove="Const\**" />
+    <None Remove="Const\**" />
   </ItemGroup>
 
   <ItemGroup>
