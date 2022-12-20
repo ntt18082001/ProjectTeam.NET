@@ -8,19 +8,14 @@
 			public const string HOME_CODE_PAGE = "HomeIndex";
 			public const string PRIVACY_CODE_PAGE = "PrivacyIndex";
 		}
-		public static class Test
-		{
-			public const string TEST_CODE_PAGE = "IndexTest";
-			public const string TEST_VIEW_CODE_PAGE = "TestView";
-		}
-		public static class Game
-		{
-			public const string GAME_CODE_PAGE = "IndexGame";
-		}
         public static class AppUser
         {
             public const string INDEX_USER_CODE_PAGE = "IndexUser";
             public const string CREATE_USER_CODE_PAGE = "CreateUser";
         }
+		public static class AppRole
+		{
+			public const string INDEX_ROLE_CODE_PAGE = "IndexRole";
+		}
     }
 }

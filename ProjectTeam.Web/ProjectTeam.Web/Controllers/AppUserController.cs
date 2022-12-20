@@ -1,11 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 
 namespace ProjectTeam.Web.Controllers
 {
     public class AppUserController : BaseAdminController
     {
-        [HttpGet]
-        public IActionResult Index()
+		public AppUserController(IMapper mapper) : base(mapper) { }
+
+		public IActionResult Index()
         {
             return View();
         }

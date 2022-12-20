@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using ProjectTeam.Web.Models;
 using System.Diagnostics;
 
@@ -8,7 +9,7 @@ namespace ProjectTeam.Web.Controllers
     {
 		private readonly ILogger<HomeController> _logger;
 
-		public HomeController(ILogger<HomeController> logger)
+		public HomeController(ILogger<HomeController> logger, IMapper mapper) : base(mapper)
 		{
 			_logger = logger;
 		}

@@ -1,4 +1,4 @@
-﻿namespace ProjectTeam.Web.Common.Mailer.IMail
+﻿namespace ProjectTeam.Web.Services.IMail
 {
     public interface IMailService
     {

@@ -52,6 +52,12 @@ namespace ProjectTeam.Data.Configurations
             builder.Property(m => m.PhoneNumber2)
                 .HasMaxLength(DB.AppUser.PHONE_LENGTH)
                 .IsUnicode(false);
-        }
-    }
+
+			// Khóa ngoại với AppRole
+			builder.HasOne(m => m.AppRole)
+				.WithMany(m => m.AppUsers)
+				.HasForeignKey(m => m.AppRoleId);
+			//.OnDelete(DeleteBehavior.NoAction);
+		}
+	}
 }

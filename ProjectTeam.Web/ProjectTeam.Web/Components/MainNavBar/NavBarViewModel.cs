@@ -22,60 +22,6 @@ namespace ProjectTeam.Web.Components.MainNavBar
 					CodePage = CodePageConst.Home.HOME_CODE_PAGE,
 					//Permission = AuthConst.NO_PERMISSION
 				},
-				new MenuItem
-				{
-					Action = "Privacy",
-					Controller = "Home",
-					DisplayText = "Privacy",
-					Icon = "mdi-home",
-					CodePage = CodePageConst.Home.PRIVACY_CODE_PAGE,
-					//Permission = AuthConst.NO_PERMISSION
-				},
-				new MenuItem
-				{
-					DisplayText = "Test",
-					Icon = "mdi-hexagon-slice-5",
-					//Permission = AuthConst.AppOrder.VIEW_LIST
-					ChildrenItems = new MenuItem[]
-					{
-						new MenuItem
-						{
-							Action = "Index",
-							Controller = "Test",
-							DisplayText = "Test",
-							Icon = "fa-box",
-							CodePage = CodePageConst.Test.TEST_CODE_PAGE
-							//Permission = AuthConst.AppProducts.VIEW_LIST
-						},
-						new MenuItem
-						{
-							Action = "Test",
-							Controller = "Test",
-							DisplayText = "Test view",
-							Icon = "fa-box",
-							CodePage = CodePageConst.Test.TEST_VIEW_CODE_PAGE
-							//Permission = AuthConst.AppProducts.VIEW_LIST
-						}
-					}
-				},
-				new MenuItem
-				{
-					DisplayText = "Game",
-					Icon = "mdi-hexagon-slice-5",
-					//Permission = AuthConst.AppOrder.VIEW_LIST
-					ChildrenItems = new MenuItem[]
-					{
-						new MenuItem
-						{
-							Action = "Index",
-							Controller = "Game",
-							DisplayText = "Game",
-							Icon = "fa-box",
-							CodePage = CodePageConst.Game.GAME_CODE_PAGE
-							//Permission = AuthConst.AppProducts.VIEW_LIST
-						}
-					}
-				},
                 new MenuItem
                 {
                     DisplayText = "Tài khoản",
@@ -91,8 +37,17 @@ namespace ProjectTeam.Web.Components.MainNavBar
                             Icon = "fa-box",
                             CodePage = CodePageConst.AppUser.INDEX_USER_CODE_PAGE
 							//Permission = AuthConst.AppProducts.VIEW_LIST
+						},
+						new MenuItem
+						{
+							Action = "Index",
+							Controller = "AppRole",
+							DisplayText = "Quản lý phân quyền",
+							Icon = "fa-box",
+							CodePage = CodePageConst.AppRole.INDEX_ROLE_CODE_PAGE
+							//Permission = AuthConst.AppProducts.VIEW_LIST
 						}
-                    }
+					}
                 },
             });
 

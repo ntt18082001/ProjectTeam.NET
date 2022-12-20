@@ -21,5 +21,6 @@ namespace ProjectTeam.Data.Entities
         public DateTime? BlockedTo { get; set; }
         public int? BlockedBy { get; set; }
         public int? AppRoleId { get; set; }
-    }
+		public AppRole AppRole { get; set; }
+	}
 }

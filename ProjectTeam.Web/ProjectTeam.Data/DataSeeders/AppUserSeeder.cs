@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using ProjectTeam.Data.Entities;
+using ProjectTeam.Share.Const;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,7 +38,7 @@ namespace ProjectTeam.Data.DataSeeders
                     UpdatedBy = -1,
                     UpdatedDate = now,
                     CreatedDate = now,
-                    AppRoleId = -1,              // Vai trò được tạo ở AppRoleSeeder
+                    AppRoleId = AppConst.RoleId.ROLE_ADMIN_ID,              // Vai trò được tạo ở AppRoleSeeder
                 }
             );
         }
