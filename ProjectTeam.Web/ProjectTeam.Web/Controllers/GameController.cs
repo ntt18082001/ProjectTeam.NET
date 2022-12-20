@@ -2,7 +2,7 @@
 
 namespace ProjectTeam.Web.Controllers
 {
-	public class GameController : Controller
+	public class GameController : BaseAdminController
 	{
 		public IActionResult Index()
 		{

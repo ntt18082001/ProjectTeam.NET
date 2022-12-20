@@ -76,7 +76,25 @@ namespace ProjectTeam.Web.Components.MainNavBar
 						}
 					}
 				},
-			});
+                new MenuItem
+                {
+                    DisplayText = "Tài khoản",
+                    Icon = "mdi-account-group",
+					//Permission = AuthConst.AppOrder.VIEW_LIST
+					ChildrenItems = new MenuItem[]
+                    {
+                        new MenuItem
+                        {
+                            Action = "Index",
+                            Controller = "AppUser",
+                            DisplayText = "Quản lý tài khoản",
+                            Icon = "fa-box",
+                            CodePage = CodePageConst.AppUser.INDEX_USER_CODE_PAGE
+							//Permission = AuthConst.AppProducts.VIEW_LIST
+						}
+                    }
+                },
+            });
 
 		}
 	}

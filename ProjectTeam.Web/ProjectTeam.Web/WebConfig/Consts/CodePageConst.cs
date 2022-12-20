@@ -17,5 +17,10 @@
 		{
 			public const string GAME_CODE_PAGE = "IndexGame";
 		}
-	}
+        public static class AppUser
+        {
+            public const string INDEX_USER_CODE_PAGE = "IndexUser";
+            public const string CREATE_USER_CODE_PAGE = "CreateUser";
+        }
+    }
 }
