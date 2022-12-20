@@ -1,5 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc.Razor;
+﻿using FluentAssertions.Common;
+using Microsoft.AspNetCore.Mvc.Razor;
+using Microsoft.EntityFrameworkCore;
+using ProjectTeam.Data;
 using ProjectTeam.Web.Components.MainNavBar;
+
 
 namespace ProjectTeam.Web.WebConfig
 {
@@ -7,7 +11,13 @@ namespace ProjectTeam.Web.WebConfig
 	{
 		public static void AddAppService(this IServiceCollection services, IConfiguration configuration)
 		{
-			services.AddControllersWithViews();
+            services.AddDbContext<WebAppDbContext>(option =>
+            {
+				option.UseSqlServer(configuration.GetConnectionString("Database"));
+
+            });
+
+            services.AddControllersWithViews();
 
 			services.Configure<RazorViewEngineOptions>(config =>
 			{
