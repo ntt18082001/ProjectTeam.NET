@@ -1,6 +1,8 @@
-﻿namespace ProjectTeam.Web.Common.Mailer
+﻿using ProjectTeam.Web.Common.Mailer.IMail;
+
+namespace ProjectTeam.Web.Common.Mailer
 {
-	public class MailService : IMailService
+    public class MailService : IMailService
 	{
 	}
 }
