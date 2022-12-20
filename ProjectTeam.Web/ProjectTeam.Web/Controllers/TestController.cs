@@ -2,8 +2,8 @@
 
 namespace ProjectTeam.Web.Controllers
 {
-	public class TestController : Controller
-	{
+	public class TestController : BaseAdminController
+    {
 		public IActionResult Index()
 		{
 			return View();

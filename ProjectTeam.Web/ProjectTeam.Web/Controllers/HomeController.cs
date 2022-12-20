@@ -4,8 +4,8 @@ using System.Diagnostics;
 
 namespace ProjectTeam.Web.Controllers
 {
-	public class HomeController : Controller
-	{
+	public class HomeController : BaseAdminController
+    {
 		private readonly ILogger<HomeController> _logger;
 
 		public HomeController(ILogger<HomeController> logger)
