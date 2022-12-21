@@ -10,7 +10,8 @@ namespace ProjectTeam.Web.Controllers
     {
 		protected readonly IMapper _mapper;
 
-		public BaseAdminController(IMapper mapper)
+        protected const string MODEL_STATE_INVALID_MESG = "Dữ liệu không hợp lệ, vui lòng kiểm tra lại";
+        public BaseAdminController(IMapper mapper)
 		{
 			_mapper = mapper;
 		}

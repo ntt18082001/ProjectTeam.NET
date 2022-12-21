@@ -1,0 +1,80 @@
+﻿@model ProjectTeam.Web.ViewModels.AppUser.UserAddOrEditVM
+@{
+    var disabled = ViewContext.GetCurrentActionName() == "Create" ? false : true;
+}
+<div class="col-md-6 mb-3">
+    <label asp-for="Username" class="form-label">Tên đăng nhập</label>
+    @if (ViewContext.GetCurrentActionName() == "Create")
+    {
+        <input class="form-control" asp-for="Username" placeholder="username123..">
+    }
+    else
+    {
+        <input class="form-control" value="@Model.Username" disabled >
+    }
+    <span asp-validation-for="Username" class="valid-feedback"> </span>
+</div>
+<div class="col-md-6 mb-3">
+    <label asp-for="Email" class="form-label">Email</label>
+    <div class="form-icon">
+        <input asp-for="Email" class="form-control form-control-icon" placeholder="example@gmail.com">
+        <i class="ri-mail-unread-line"></i>
+    </div>
+    <span asp-validation-for="Email" class="valid-feedback"> </span>
+</div>
+<div class="col-md-6 mb-3">
+    <label asp-for="Password" class="form-label">Mật khẩu</label>
+    @if (disabled)
+    {
+        <input class="form-control" disabled value="********">
+    }
+    else
+    {
+        <input class="form-control" asp-for="Password" placeholder="Password">
+        <span asp-validation-for="Password" class="valid-feedback"> </span>
+    }
+    
+</div>
+<div class="col-md-6 mb-3">
+    <label asp-for="ConfirmPwd" class="form-label">Xác nhận mật khẩu</label>
+    @if (disabled)
+    {
+        <input class="form-control" disabled value="********">
+    }
+    else{
+        <input class="form-control" asp-for="ConfirmPwd" placeholder="Password">
+        <span asp-validation-for="ConfirmPwd" class="valid-feedback"> </span>
+    }
+</div>
+<div class="col-md-6 mb-3">
+    <label asp-for="FullName" class="form-label">Họ và tên</label>
+    <input class="form-control" asp-for="FullName" placeholder="Nguyen Van A">
+    <span asp-validation-for="FullName" class="valid-feedback"> </span>
+</div>
+<div class="col-xxl-6 col-md-6 mb-3">
+    <div class="row">
+        <div class="col-6">
+            <label asp-for="PhoneNumber1" class="form-label">Số điện thoaị</label>
+            <input class="form-control" asp-for="PhoneNumber1" placeholder="(xxx)xxx-xxxx">
+            <span asp-validation-for="PhoneNumber1" class="valid-feedback"> </span>
+        </div>
+        <div class="col-6">
+            <label asp-for="PhoneNumber2" class="form-label">SDT dự phòng</label>
+            <input class="form-control" asp-for="PhoneNumber2" placeholder="(xxx)xxx-xxxx">
+            <span asp-validation-for="PhoneNumber2" class="valid-feedback"> </span>
+        </div>
+    </div>
+</div>
+<div class="col-md-6 mb-3">
+    <label asp-for="Address" class="form-label">Địa chỉ</label>
+    <input class="form-control" asp-for="Address" placeholder="30/4 Phường hưng lợi,...">
+</div>
+<div class="col-md-6 mb-3">
+    <div class="mb-3">
+        <label asp-for="AppRoleId" class="form-label">Vai trò trên hệ thống</label>
+        <select asp-for="AppRoleId" class="form-control"  data-choices data-choices-search-false data-choices-removeItem>
+            <option value="1">Khong có vài trờ gì lớn</option>
+        </select>
+        <span asp-validation-for="AppRoleId" class="valid-feedback"> </span>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Quản lý tài khoản";
+    ViewBag.CodePage = CodePageConst.AppUser.INDEX_USER_CODE_PAGE;
+}
+<!-- end row -->
+
+<div class="row">
+    <form asp-action="Create" autocomplete="off">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <partial name="_AddOrEdit" />
+            <div class="mt-5">
+                <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Lưu</button>
+                <button type="reset" class="btn btn-default"><i class="fa fa-undo"></i> Nhập lại</button>
+            </div>
+    </form>
+</div>
+<!-- end col -->
+<!-- end row -->
+@section Scripts{
+    <!-- filepond js -->
+    <script src="~/AdminTemplate/assets/libs/filepond/filepond.min.js"></script>
+    <script src="~/AdminTemplate/assets/libs/filepond-plugin-image-preview/filepond-plugin-image-preview.min.js"></script>
+    <script src="~/AdminTemplate/assets/libs/filepond-plugin-file-validate-size/filepond-plugin-file-validate-size.min.js"></script>
+    <script src="~/AdminTemplate/assets/libs/filepond-plugin-image-exif-orientation/filepond-plugin-image-exif-orientation.min.js"></script>
+    <script src="~/AdminTemplate/assets/libs/filepond-plugin-file-encode/filepond-plugin-file-encode.min.js"></script>
+
+    @*<script src="~/AdminTemplate/assets/js/pages/form-file-upload.init.js" asp-append-version="true"></script>*@
+  
+    }
