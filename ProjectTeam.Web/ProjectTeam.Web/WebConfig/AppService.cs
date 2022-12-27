@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.EntityFrameworkCore;
 using ProjectTeam.Data;
 using ProjectTeam.Data.Serivces;
+using ProjectTeam.Web.Common.Mailer;
 using ProjectTeam.Web.Components.MainNavBar;
 
 
@@ -44,6 +45,11 @@ namespace ProjectTeam.Web.WebConfig
 			NavBarViewModel navBar = new();
 			navBar.AddListNavBar();
 			services.AddSingleton(navBar);
+
+			// Khởi tạo thông tin mail
+			AppMailConfiguration mailConfig = new();
+			mailConfig.LoadFromConfig(configuration);
+			services.AddSingleton(mailConfig);
 		}
 	}
 }

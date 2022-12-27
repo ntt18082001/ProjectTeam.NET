@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectTeam.Web", "ProjectTeam.Web\ProjectTeam.Web.csproj", "{FB5261CF-FEA3-4B7E-BEE2-0768AD146781}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectTeam.Web", "ProjectTeam.Web\ProjectTeam.Web.csproj", "{FB5261CF-FEA3-4B7E-BEE2-0768AD146781}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectTeam.Data", "ProjectTeam.Data\ProjectTeam.Data.csproj", "{164EDD92-E706-483C-9AB0-5DF2C1044D5B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectTeam.Data", "ProjectTeam.Data\ProjectTeam.Data.csproj", "{164EDD92-E706-483C-9AB0-5DF2C1044D5B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectTeam.Share", "ProjectTeam.Shared\ProjectTeam.Share.csproj", "{55E442AD-FC03-43F8-A077-6F2C09662FB2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectTeam.Share", "ProjectTeam.Shared\ProjectTeam.Share.csproj", "{55E442AD-FC03-43F8-A077-6F2C09662FB2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
