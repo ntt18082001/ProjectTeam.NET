@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using ProjectTeam.Data;
 using ProjectTeam.Data.Serivces;
 using ProjectTeam.Web.Components.MainNavBar;
-
+using ProjectTeam.Web.WebConfig.Consts;
 
 namespace ProjectTeam.Web.WebConfig
 {
@@ -44,6 +44,14 @@ namespace ProjectTeam.Web.WebConfig
 			NavBarViewModel navBar = new();
 			navBar.AddListNavBar();
 			services.AddSingleton(navBar);
+
+			//Cấu hình đăng nhập
+			services.AddAuthentication(AppConst.COOKIES_AUTH).AddCookie(options =>
+			{
+				options.LoginPath = AppConst.LOGIN_PATH;
+				options.ExpireTimeSpan = TimeSpan.FromHours(AppConst.LOGIN_TIMEOUT);
+				options.Cookie.HttpOnly = true;
+			});
 		}
 	}
 }
