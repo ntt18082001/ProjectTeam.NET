@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using AutoMapper;
+using AutoMapper.QueryableExtensions;
+using Microsoft.EntityFrameworkCore;
 using ProjectTeam.Data.Entities.Base;
 using System;
 using System.Collections.Generic;
@@ -97,21 +99,21 @@ namespace ProjectTeam.Data.Serivces
 			return await query.FirstOrDefaultAsync();
 		}
 
-		//public virtual async Task<TViewModel> GetOneAsync<TEntity, TViewModel>(
-		//	Expression<Func<TEntity, bool>> where,
-		//	MapperConfiguration mapperConfig,
-		//	bool selectFromTrash = false)
-		//	where TEntity : AppEntityBase
-		//{
-		//	var defaultWhere = GetDefaultWhereExpr<TEntity>(selectFromTrash);
-		//	var query = _db.Set<TEntity>()
-		//				.AsNoTracking()
-		//				.Where(defaultWhere)
-		//				.Where(where)
-		//				.ProjectTo<TViewModel>(mapperConfig);
-		//	// LogDebugQuery(query);
-		//	return await query.SingleOrDefaultAsync();
-		//}
+		public virtual async Task<TViewModel> GetOneAsync<TEntity, TViewModel>(
+			Expression<Func<TEntity, bool>> where,
+			MapperConfiguration mapperConfig,
+			bool selectFromTrash = false)
+			where TEntity : AppEntityBase
+		{
+			var defaultWhere = GetDefaultWhereExpr<TEntity>(selectFromTrash);
+			var query = _db.Set<TEntity>()
+						.AsNoTracking()
+						.Where(defaultWhere)
+						.Where(where)
+						.ProjectTo<TViewModel>(mapperConfig);
+			// LogDebugQuery(query);
+			return await query.SingleOrDefaultAsync();
+		}
 
 		public virtual async Task<TViewModel> GetOneAsync<TEntity, TViewModel>(
 			Expression<Func<TEntity, bool>> where,

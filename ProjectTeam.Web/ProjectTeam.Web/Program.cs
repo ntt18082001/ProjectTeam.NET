@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc.Razor;
 using ProjectTeam.Web.WebConfig;
+using ProjectTeam.Web.WebConfig.Consts;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -39,6 +40,16 @@ app.UseAuthorization();
 app.UseEndpoints(endpoints =>
 {
 	endpoints.MapAppRoute();
+
+	endpoints.MapControllerRoute(
+				name: "Client",
+				pattern: AppConst.LOGIN_PATH,
+				defaults: new
+				{
+					controller = "Auth",
+					action = "Login",
+
+				});
 });
 
 app.Run();

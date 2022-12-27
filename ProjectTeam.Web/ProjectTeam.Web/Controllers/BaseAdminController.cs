@@ -14,6 +14,9 @@ namespace ProjectTeam.Web.Controllers
 		{
 			_mapper = mapper;
 		}
+
+		protected RedirectToActionResult HomePage() => RedirectToAction("Index", "Home");
+
 		/// <summary>
 		/// Gán thông báo lỗi để hiển thị lên view
 		/// </summary>
