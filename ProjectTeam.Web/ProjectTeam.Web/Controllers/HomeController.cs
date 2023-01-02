@@ -1,10 +1,13 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ProjectTeam.Web.Models;
+using ProjectTeam.Web.WebConfig.Consts;
 using System.Diagnostics;
 
 namespace ProjectTeam.Web.Controllers
 {
+	[Authorize(AuthenticationSchemes = AppConst.COOKIES_AUTH)]
 	public class HomeController : BaseAdminController
     {
 		private readonly ILogger<HomeController> _logger;

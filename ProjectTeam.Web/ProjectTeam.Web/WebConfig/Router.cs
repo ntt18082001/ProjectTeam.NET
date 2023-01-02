@@ -4,7 +4,6 @@
 	{
 		public static void MapAppRoute(this IEndpointRouteBuilder endpoints)
 		{
-
 			endpoints.MapControllerRoute(
 					name: "login",
 					pattern: "/login",
