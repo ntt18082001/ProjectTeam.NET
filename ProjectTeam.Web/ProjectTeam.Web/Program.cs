@@ -1,3 +1,5 @@
+using log4net.Config;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Razor;
 using ProjectTeam.Web.WebConfig;
 
@@ -14,6 +16,13 @@ var builder = WebApplication.CreateBuilder(args);
 //});
 
 builder.Services.AddAppService(builder.Configuration);
+
+//log4net
+//builder.Services.AddControllersWithViews();
+builder.Logging.ClearProviders();
+builder.Logging.AddLog4Net();
+XmlConfigurator.Configure(new FileInfo("log4net.config"));
+
 
 var app = builder.Build();
 

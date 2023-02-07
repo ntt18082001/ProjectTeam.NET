@@ -16,6 +16,7 @@ namespace ProjectTeam.Web.Controllers
 
 		public IActionResult Index()
 		{
+			_logger.LogWarning("Errorr");
 			return View();
 		}
 
